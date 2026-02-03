@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6weeks — Форма</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <header class="header">
+        <div class="badge">6weeks</div>
+        <h1>Форма користувача</h1>
+        <p>Заповніть форму. Email — обовʼязковий.</p>
+      </header>
+
+      <form class="form" id="sixweeksForm" novalidate>
+        <div class="field">
+          <label for="name">Ім’я <span class="optional">(необов’язково)</span></label>
+          <input id="name" name="name" type="text" placeholder="Напр.: Влад" autocomplete="name" />
+          <small class="hint">Можна пропустити.</small>
+        </div>
+
+        <div class="field">
+          <label for="email">Email <span class="required">*</span></label>
+          <input id="email" name="email" type="email" placeholder="name@example.com" autocomplete="email" required />
+          <small class="error" id="emailError" aria-live="polite"></small>
+        </div>
+
+        <div class="field">
+          <label for="message">Текстове поле <span class="optional">(необов’язково)</span></label>
+          <textarea id="message" name="message" rows="5" placeholder="Ваш текст…"></textarea>
+          <small class="hint">Наприклад: короткий коментар.</small>
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit" id="submitBtn">
+            <span>Надіслати</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M2 12l19-9-6 20-4-7-9-4zm10 1l9-9-11 7 2 2z"></path>
+            </svg>
+          </button>
+          <button class="btn secondary" type="reset">Очистити</button>
+        </div>
+
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      </form>
+
+      <footer class="footer">
+        <div class="meta">
+          <span class="dot"></span>
+          <span>Валідація + відправка через Vercel Function</span>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
