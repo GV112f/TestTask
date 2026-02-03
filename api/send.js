@@ -46,7 +46,7 @@ export default async function handler(req, res) {
         },
         body: JSON.stringify({
           from: mailFrom,
-          to: ["6weeks.13h@gmail.com"], 
+          to: ["golban.vlad15@gmail.com"], 
           subject,
           text,
         }),
@@ -69,4 +69,5 @@ export default async function handler(req, res) {
     return json(res, 504, { ok: false, error: msg });
   }
 }
+
 
